@@ -25,14 +25,16 @@ class _PageContainerState extends State<PageContainer> {
           ],
           child: Container(
             child: Consumer<AuthProvider>(
-                builder: (ctx, auth, _) => (auth.loginStatus == null)
-                    ? Center(
-                        child: CircularProgressIndicator(),
-                      )
-                    : Container(
-                        child: (auth.loginStatus ?? false)
-                            ? Home()
-                            : LoginRegister())),
+              builder: (ctx, auth, _) => (auth.loginStatus == null)
+                  ? Center(
+                      child: CircularProgressIndicator(),
+                    )
+                  : Container(
+                      child: (auth.loginStatus ?? false)
+                          ? Home()
+                          : LoginRegister(),
+                    ),
+            ),
           ),
         ));
   }
